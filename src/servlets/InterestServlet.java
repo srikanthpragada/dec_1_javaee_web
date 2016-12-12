@@ -13,19 +13,27 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/interest")
 public class InterestServlet extends HttpServlet {
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
-
-		String input = request.getParameter("amount");
-		double amount = Double.parseDouble(input);
-
-		double interest = amount * 0.125;
 
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		out.printf("<html><h1>Interest = %f</h1></html>", interest);
+
+		String input = request.getParameter("amount");
+		if (input != null) {
+			double amount = Double.parseDouble(input);
+			double interest = amount * 0.125;
+			out.printf("<html><h1>Interest = %f</h1></html>", interest);
+		} else {
+			out.println("<h3>Sorry! Missing amount!</h3>");
+		}
 		out.close();
 
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		doPost(request, response);
 	}
 
 }
