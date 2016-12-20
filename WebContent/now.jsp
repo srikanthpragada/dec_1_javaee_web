@@ -8,9 +8,13 @@
 </head>
 <body>
 <h2>
+<%!
+  int v = 10; 
+%>
 <%
    // java code 
    out.println( new java.util.Date());
+   out.println(v);
 %>
 </h2>
 
