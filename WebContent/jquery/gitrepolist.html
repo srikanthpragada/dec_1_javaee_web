@@ -15,7 +15,7 @@
 		$.each(result,
 				function(idx,repo)
 				{
-                   		$("#repos").append("<li>" + repo.name +"</li>");	 
+                   		$("#repos").append("<li>" + repo.name + " - " + repo.description +"</li>");	 
 				}
 				
 		);
@@ -26,7 +26,10 @@
 </head>
 <body>
 	<h2>List Of Repos</h2>
-
+	<!-- 
+	  User : <input type="text" id="user" /> <button onclick="getrepos()">Get Repos</button>
+    -->
+ 
 	<ul id="repos">
 
 	</ul>
