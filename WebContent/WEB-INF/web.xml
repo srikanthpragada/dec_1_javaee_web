@@ -7,6 +7,21 @@
 	<session-config>
 		<session-timeout>10</session-timeout>
 	</session-config>
+	
+	
+	<servlet>
+		<servlet-name>JSF</servlet-name>
+		<servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>JSF</servlet-name>
+		<url-pattern>/faces/*</url-pattern>
+	</servlet-mapping>
+	
+	
+	
+	<!-- 
 
 	<listener>
 		<listener-class>
@@ -40,7 +55,7 @@
 		<url-pattern>/rest/*</url-pattern>
 	</servlet-mapping>
 
-
+ -->
 
 
 	<!-- <servlet> <servlet-name>now</servlet-name> <servlet-class>servlets.NowServlet</servlet-class> 
