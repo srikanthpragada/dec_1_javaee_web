@@ -11,10 +11,17 @@
 <body>
 	<h1>Interest Calculation</h1>
 
-    <h:form>
+    <h:form id="interestForm"  prependId="false">
       Amount : <h:inputText  p:title="Amount" p:placeholder="amount" 
-                             p:type="number" p:required="required"  p:min="1000" 
-                             id="amount" value="#{interestBean.amount}"></h:inputText>
+                             p:type="number" p:required="required"   
+                             id="amount" 
+                             value="#{interestBean.amount}"
+                             validatorMessage="Invalid Amount. Please enter amount >= 1000">
+                     <f:validateDoubleRange minimum="1000"> </f:validateDoubleRange>                             
+               </h:inputText>
+               <h:message for="amount"></h:message>
+      <p/>
+               
       Int. Rate : <h:inputText p:title="Interest Rate" p:type="number" p:required="required"  p:min="1" p:max="100"
                              id="rate" value="#{interestBean.rate}"></h:inputText>
      

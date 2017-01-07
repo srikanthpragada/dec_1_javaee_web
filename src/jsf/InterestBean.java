@@ -30,7 +30,7 @@ public class InterestBean {
 	public void setInterest(double interest) {
 		this.interest = interest;
 	}
-
+    // Action Listener 
 	public void calculate(ActionEvent evt) {
 		interest = amount * rate / 100;
 	}
